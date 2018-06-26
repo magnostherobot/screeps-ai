@@ -1,4 +1,4 @@
-const move = require('creep');
+const util = require('creep');
 
 module.exports = {
   run: (creep) => {
@@ -6,12 +6,12 @@ module.exports = {
       // just use the first source for now
       const source = creep.pos.findClosestByPath(FIND_SOURCES);
       if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-        move(creep, source);
+        util.move(creep, source);
       }
     } else {
       const spawn = Game.spawns['Initial'];
       if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        move(creep, spawn);
+        util.move(creep, spawn);
       }
     }
   }
