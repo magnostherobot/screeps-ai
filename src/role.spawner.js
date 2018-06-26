@@ -4,10 +4,11 @@ const creeps = new Map([
 ]);
 
 const spawnCreep = (spawn, job, tools) => {
-  Memory.counts[job]++;
   const name = job + Game.time;
-  spawn.spawnCreep(tools, name);
-  Game.creeps[name].memory.job = job;
+  if (spawn.spawnCreep(tools, name) == OK) {
+    Memory.counts[job]++;
+    Game.creeps[name].memory.job = job;
+  }
 };
 
 const creepSpawnerFunctions = {
