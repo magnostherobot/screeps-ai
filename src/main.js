@@ -1,5 +1,5 @@
 const jobs = {
-  harvester: require('role.harvester');
+  harvester: require('role.harvester')
 };
 
 const spawnCreep = (spawn, job, tools) => {
