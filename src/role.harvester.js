@@ -4,12 +4,12 @@ module.exports = {
       // just use the first sourrce for now
       const source = creep.room.find(FIND_SOURCES)[0];
       if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(source);
+        creep.moveTo(source, { range: 1 });
       }
     } else {
       const spawn = Game.spawns['Initial'];
       if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(spawn);
+        creep.moveTo(spawn, { range: 1 });
       }
     }
   }
