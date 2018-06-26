@@ -14,6 +14,7 @@ module.exports = {
     } else {
       if (creep.carry.energy < creep.carryCapacity) {
         // still filling up
+        const spawn = Game.spawns['Initial'];
         if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
           creep.moveTo(spawn);
         }
