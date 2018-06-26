@@ -18,6 +18,12 @@ const creepSpawnerFunctions = {
   },
   upgrader: (spawn) => {
     spawnCreep(spawn, 'upgrader', [WORK, MOVE, CARRY]);
+  },
+  offender: (spawn) => {
+    spawnCreep(spawn, 'offender', [ATTACK, MOVE]);
+  },
+  builder: (spawn) => {
+    spawnCreep(spawn, 'builder', [MOVE, MOVE, WORK, CARRY]);
   }
 };
 
