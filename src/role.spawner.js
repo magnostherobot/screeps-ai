@@ -1,6 +1,8 @@
 const creeps = new Map([
   [ 'harvester', 5 ],
-  [ 'upgrader', 10 ]
+  [ 'upgrader', 1 ],
+  [ 'offender', 3 ],
+  [ 'builder', 3 ]
 ]);
 
 const spawnCreep = (spawn, job, tools) => {
