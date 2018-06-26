@@ -7,7 +7,7 @@ const creeps = new Map([
 
 const spawnCreep = (spawn, job, tools) => {
   const name = job + Game.time;
-  if (spawn.spawnCreep(tools, name, { memory: { role: job } }) == OK) {
+  if (spawn.spawnCreep(tools, name, { memory: { job: job } }) == OK) {
     Memory.counts[job]++;
   }
 };
