@@ -17,8 +17,7 @@ module.exports.loop = () => {
     if (job) {
       job.run(creep);
     } else {
-      console.log(creep.name + " is missing instructions for job "
-        + creep.memory.job);
+      error.log(`${creep.name} cannot find ${creep.memory.job} instructions`);
     }
   }
   for (const name in Game.spawns) {
