@@ -13,7 +13,7 @@ module.exports.loop = () => {
   for (const name in Game.creeps) {
     const creep = Game.creeps[name];
     const job = jobs[creep.memory.job];
-    Memory.counts[job]++;
+    Memory.counts[creep.memory.job]++;
     if (job) {
       job.run(creep);
     } else {
