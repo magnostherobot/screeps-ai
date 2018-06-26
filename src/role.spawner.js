@@ -22,10 +22,10 @@ const creepSpawnerFunctions = {
 
 module.exports = {
   run: (spawn) => {
-    for (const job in creeps) {
-      if (Memory.counts[job] < creeps[job]) {
+    creeps.forEach((job, count) => {
+      if (Memory.counts[job] < count) {
         creepSpawnerFunctions[job](spawn);
       }
-    }
+    });
   }
 };
