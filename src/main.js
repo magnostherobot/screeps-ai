@@ -2,7 +2,8 @@ const jobs = {
   harvester: require('role.harvester'),
   upgrader: require('role.upgrader'),
   spawner: require('role.spawner'),
-  builder: require('role.builder')
+  builder: require('role.builder'),
+  offender: require('role.offender')
 };
 
 module.exports.loop = () => {
