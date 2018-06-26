@@ -1,18 +1,6 @@
-const move = (creep, x, y) => {
-  if (y === undefined) return move(creep, x.pos.x, x.pos.y);
-  switch (creep.moveTo(x, y)) {
-    case 0:
-      return true;
-    case -2:
-      console.log(creep + " could not move to " + x + ", " + y);
-      for (i = -1; i <= 1; ++i) {
-        for (j = -1; j <= 1; ++j) {
-          if (creep.moveTo(x + i, y + j)) return true;
-        }
-      }
-    default:
-      return false;
-  }
+const move = (creep, target) => {
+  const path = creep.room.findPath(creep.pos, target.pos);
+  creep.move(path[0].direction);
 }
 
 module.exports = {
