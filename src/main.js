@@ -1,24 +1,13 @@
 const jobs = {
   harvester: require('role.harvester'),
-  upgrader: require('role.upgrader')
-};
-
-const spawnCreep = (spawn, job, tools) => {
-  Memory.counts[job]++;
-  const name = job + Memory.counts[job];
-  spawn.spawnCreep(tools, name);
-  Game.creeps[name].memory.job = job;
-};
-
-const spawnHarvester = (spawn) => {
-  spawnCreep(spawn, 'harvester', [WORK, MOVE, CARRY]);
-};
-
-const spawnUpgrader = (spawn) => {
-  spawnCreep(spawn, 'upgrader', [WORK, MOVE, CARRY]);
+  upgrader: require('role.upgrader'),
+  spawner: require('role.spawner')
 };
 
 module.exports.loop = () => {
+  for (const name in Game.spawns) {
+    jobs.spawner.run(Game.spawns[name]);
+  }
   for (const name in Game.creeps) {
     const creep = Game.creeps[name];
     const job = jobs[creep.memory.job];
@@ -27,6 +16,9 @@ module.exports.loop = () => {
     } else {
       console.log(creep.name + " is missing instructions for job "
         + creep.memory.job);
+    }
+    if (creep.ticksToLive == 1) {
+      Memory.counts[creep.memory.job]--;
     }
   }
 };
