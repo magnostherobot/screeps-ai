@@ -8,7 +8,7 @@ module.exports = {
       }
     } else {
       const spawn = Game.spawns['Initial'];
-      if (creep.transfer(spawn), RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+      if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         creep.moveTo(spawn);
       }
     }
