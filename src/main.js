@@ -20,7 +20,7 @@ module.exports.loop = () => {
     if (job) {
       job.run(creep);
     } else {
-      console.err(creep.name + " is missing instructions for job "
+      console.log(creep.name + " is missing instructions for job "
         + creep.memory.job);
     }
   }
