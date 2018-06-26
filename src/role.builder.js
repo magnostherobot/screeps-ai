@@ -5,7 +5,7 @@ module.exports = {
         const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
         if (targets.length) {
           if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(targets[0]);
+            move(creep, targets[0]);
           }
         }
       } else {
@@ -16,7 +16,7 @@ module.exports = {
         // still filling up
         const spawn = Game.spawns['Initial'];
         if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(spawn);
+          move(creep, spawn);
         }
       } else {
         creep.memory.state = "building";
