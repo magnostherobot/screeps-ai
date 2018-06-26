@@ -1,5 +1,6 @@
 const jobs = {
-  harvester: require('role.harvester')
+  harvester: require('role.harvester'),
+  upgrader: require('role.upgrader')
 };
 
 const spawnCreep = (spawn, job, tools) => {
@@ -7,11 +8,15 @@ const spawnCreep = (spawn, job, tools) => {
   const name = job + Memory.counts[job];
   spawn.spawnCreep(tools, name);
   Game.creeps[name].memory.job = job;
-}
+};
 
 const spawnHarvester = (spawn) => {
   spawnCreep(spawn, 'harvester', [WORK, MOVE, CARRY]);
-}
+};
+
+const spawnUpgrader = (spawn) => {
+  spawnCreep(spawn, 'upgrader', [WORK, MOVE, CARRY]);
+};
 
 module.exports.loop = () => {
   for (const name in Game.creeps) {
@@ -24,4 +29,4 @@ module.exports.loop = () => {
         + creep.memory.job);
     }
   }
-}
+};
