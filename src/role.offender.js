@@ -1,3 +1,5 @@
+// vim: tw=80 ts=2 sw=2 et
+
 const util = require('creep');
 
 module.exports = {
