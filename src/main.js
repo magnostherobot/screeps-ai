@@ -1,11 +1,11 @@
 // vim: tw=80 ts=2 sw=2 et
 
 const jobs = {
-  harvester: require('role/harvester'),
-  upgrader: require('role/upgrader'),
-  spawner: require('role/spawner'),
-  builder: require('role/builder'),
-  offender: require('role/offender')
+  harvester: require('harvester'),
+  upgrader: require('upgrader'),
+  spawner: require('spawner'),
+  builder: require('builder'),
+  offender: require('offender')
 };
 
 Memory.counts = {};

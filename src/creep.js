@@ -21,6 +21,10 @@ Room.prototype.createCostMatrices = function() {
     }
   }
 
+  if (this.memory.cm == null) {
+    this.memory.cm = {};
+  }
+
   this.memory.cm.road = roadGrid;
   this.memory.cm.struct = structGrid;
 }
